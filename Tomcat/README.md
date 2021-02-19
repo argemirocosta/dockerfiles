@@ -25,7 +25,7 @@ Inside the image:
 ./startup.sh 
 ```
 
-Acesse http://localhost:8081/SampleWebApp/ in browser.
+Acess http://localhost:8081/SampleWebApp/ in browser.
 
 ## Description
 
