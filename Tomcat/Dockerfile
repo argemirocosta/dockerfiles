@@ -1,13 +1,15 @@
 FROM centos:latest
 
+LABEL version="1.0" description="centos/tomcat"
+
 #CRIANDO PASTA PARA O TOMCAT
 RUN mkdir /opt/tomcat/
 WORKDIR /opt/tomcat
 
 #BAIXANDO E INSTALANDO O TOMCAT
-RUN curl -O https://downloads.apache.org/tomcat/tomcat-8/v8.5.61/bin/apache-tomcat-8.5.61.tar.gz
-RUN tar xvfz apache-tomcat-8.5.61.tar.gz
-RUN mv apache-tomcat-8.5.61/* /opt/tomcat/.
+RUN curl -O https://downloads.apache.org/tomcat/tomcat-8/v8.5.61/bin/apache-tomcat-8.5.61.tar.gz &&\
+tar xvfz apache-tomcat-8.5.61.tar.gz &&\
+mv apache-tomcat-8.5.61/* /opt/tomcat/.
 
 #COPIANDO ARQUIVOS DE CONFIGURAÇÃO
 WORKDIR /opt/tomcat/conf/
@@ -35,5 +37,3 @@ RUN curl -O -L https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWeb
 WORKDIR /opt/tomcat/bin
 
 EXPOSE 8080
-
-CMD ["/opt/tomcat/bin/catalina.sh", "run"]
