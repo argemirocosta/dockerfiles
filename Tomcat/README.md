@@ -10,7 +10,7 @@ Clone the project:
 git clone https://github.com/argemirocosta/dockerfiles.git
 ```
 
-Inside the folder:
+Inside the Tomcat folder:
 
 ```shell
 docker build . -t name_tag
